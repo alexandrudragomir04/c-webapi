@@ -1,0 +1,105 @@
+{
+	"info": {
+		"_postman_id": "17487712-3955-4603-a4d6-57c7040bc79b",
+		"name": "Test Collection GET",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET /organtzation/auth/paramters",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "a788968c-086f-4893-8e72-2ba66ac8ec59",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "45420a33-5320-41c8-a8c8-bf10ca5768c3",
+						"exec": [
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.expect(pm.response).to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+							"});",
+							"",
+							"console.log(pm.response.status);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "organizationCode",
+						"value": " 3Ag9ku",
+						"type": "text"
+					},
+					{
+						"key": "packageName",
+						"value": "com.ortec.driverapp",
+						"type": "text"
+					},
+					{
+						"key": "appVersion",
+						"value": "1.0",
+						"type": "text"
+					},
+					{
+						"key": "instanceId",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url_delivery_test}}/organization/auth/parameters",
+					"host": [
+						"{{url_delivery_test}}"
+					],
+					"path": [
+						"organization",
+						"auth",
+						"parameters"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
